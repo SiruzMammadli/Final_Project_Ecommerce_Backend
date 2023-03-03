@@ -1,0 +1,15 @@
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\bin\Debug\net7.0\finalProject.Entities.deps.json
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\bin\Debug\net7.0\finalProject.Entities.dll
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\bin\Debug\net7.0\finalProject.Entities.pdb
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\bin\Debug\net7.0\finalProject.Common.dll
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\bin\Debug\net7.0\finalProject.Common.pdb
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.csproj.AssemblyReference.cache
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.AssemblyInfoInputs.cache
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.AssemblyInfo.cs
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.csproj.CoreCompileInputs.cache
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.csproj.CopyComplete
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.dll
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\refint\finalProject.Entities.dll
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\finalProject.Entities.pdb
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Entities\obj\Debug\net7.0\ref\finalProject.Entities.dll

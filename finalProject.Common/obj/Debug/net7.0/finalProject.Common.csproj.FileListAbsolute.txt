@@ -1,0 +1,12 @@
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\bin\Debug\net7.0\finalProject.Common.deps.json
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\bin\Debug\net7.0\finalProject.Common.dll
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\bin\Debug\net7.0\finalProject.Common.pdb
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\finalProject.Common.csproj.AssemblyReference.cache
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\finalProject.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\finalProject.Common.AssemblyInfoInputs.cache
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\finalProject.Common.AssemblyInfo.cs
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\finalProject.Common.csproj.CoreCompileInputs.cache
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\finalProject.Common.dll
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\refint\finalProject.Common.dll
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\finalProject.Common.pdb
+D:\WORK\KURS\FULLSTACK-FINAL\final-project-ecommerce-backend\finalProject.Common\obj\Debug\net7.0\ref\finalProject.Common.dll
