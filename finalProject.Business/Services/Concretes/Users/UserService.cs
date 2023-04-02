@@ -38,6 +38,7 @@ namespace finalProject.Business.Services.Concretes.Users
                         LastName = current_user.LastName,
                         Email = current_user.Email,
                         Role = current_user.Role,
+                        CreatedAt = current_user.CreatedAt,
                     });
                 }
                 catch (Exception ex)

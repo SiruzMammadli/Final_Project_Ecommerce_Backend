@@ -5,6 +5,7 @@ using finalProject.Common.Repositories.MongoDb.Settings;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Linq.Expressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace finalProject.Common.Repositories.MongoDb
 {
@@ -41,6 +42,11 @@ namespace finalProject.Common.Repositories.MongoDb
             FilterDefinition<TDocument> filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, data.Id);
             await _collection.ReplaceOneAsync(filter, data);
         }
+        public async Task RemoveAsync(string id)
+        {
+            FilterDefinition<TDocument> filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, ObjectId.Parse(id));
+            //await _collection.ReplaceOneAsync(filter,)
+        }
         public IEnumerable<TDocument> GetAll()
         {
             return _collection.Find(x => x.IsDeleted.Equals(false)).ToEnumerable();
@@ -49,6 +55,12 @@ namespace finalProject.Common.Repositories.MongoDb
         public IEnumerable<TDocument> GetWhere(Expression<Func<TDocument, bool>> filter)
         {
             return _collection.Find(filter).ToEnumerable();
+        }
+
+        public async Task<TDocument> GetByIdAsync(string id)
+        {
+            FilterDefinition<TDocument> filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, ObjectId.Parse(id));
+            return await _collection.Find(filter).FirstOrDefaultAsync();
         }
     }
 }

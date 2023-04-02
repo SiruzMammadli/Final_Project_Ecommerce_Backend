@@ -29,6 +29,7 @@ namespace finalProject.Business.Extensions
             #region Services
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryTypeService, CategoryTypeService>();
+            services.AddScoped<ISubCategoryService, SubCategoryService>();
             services.AddScoped<IUserService, UserService>();
             #endregion
 

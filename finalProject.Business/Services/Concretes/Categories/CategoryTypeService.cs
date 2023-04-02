@@ -17,6 +17,25 @@ namespace finalProject.Business.Services.Concretes.Categories
             _categoryTypeRepository = categoryTypeRepository;
         }
 
+        public IDataResponse<IEnumerable<CategoryType_Dto>> GetAll()
+        {
+            IEnumerable<CategoryType> category_types = _categoryTypeRepository.GetAll();
+
+
+            try
+            {
+                return new SuccessDataResponse<IEnumerable<CategoryType_Dto>>(category_types.Select(ct => new CategoryType_Dto()
+                {
+                    Id = ct.Id.ToString(),
+                    TypeName = ct.TypeName
+                }).ToList());
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDataResponse<IEnumerable<CategoryType_Dto>>(ex.Message);
+            }
+        }
+
         public IResponse Insert(AddCategoryType_Dto data)
         {
             try

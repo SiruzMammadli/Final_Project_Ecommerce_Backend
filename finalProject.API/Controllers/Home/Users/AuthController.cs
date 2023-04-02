@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace finalProject.API.Controllers.Home.Users
 {
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     [ApiController]
     public class AuthController : ControllerBase
     {

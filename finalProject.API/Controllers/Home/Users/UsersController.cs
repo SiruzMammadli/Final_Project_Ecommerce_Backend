@@ -4,7 +4,7 @@ using Microsoft.Net.Http.Headers;
 
 namespace finalProject.API.Controllers.Home.Users
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ApiController]
     public class UsersController : ControllerBase
     {

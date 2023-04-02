@@ -12,11 +12,7 @@ namespace finalProject.Common.Secure.Jwt
         {
             List<Claim> claims = new List<Claim>()
             {
-                new Claim("_id", user.Id.ToString()),
-                new Claim("firstName", user.FirstName),
-                new Claim("lastName", user.LastName),
-                new Claim("email", user.Email),
-                new Claim("role", user.Role)
+                new Claim("_id", user.Id.ToString())
             };
 
             SymmetricSecurityKey key = new(Encoding.UTF8.GetBytes("RANAUbe3TPYcBZoPqChkrD"));

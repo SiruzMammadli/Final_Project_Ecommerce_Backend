@@ -6,5 +6,6 @@ namespace finalProject.Business.Services.Abstracts.Categories
     public interface ICategoryTypeService
     {
         IResponse Insert(AddCategoryType_Dto data);
+        IDataResponse<IEnumerable<CategoryType_Dto>> GetAll();
     }
 }

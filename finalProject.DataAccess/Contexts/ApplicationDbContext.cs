@@ -6,7 +6,11 @@ namespace finalProject.DataAccess.Contexts
 {
     public class ApplicationDbContext : DbContext
     {
+        //User Entities
         public DbSet<User> Users { get; set; }
+        public DbSet<UserCountry> UserCountries { get; set; }
+
+        //Category Entities
         public DbSet<Category> Categories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<CategoryType> CategoryTypes { get; set; }

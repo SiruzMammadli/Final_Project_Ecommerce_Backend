@@ -1,7 +1,11 @@
 ﻿using finalProject.Business.Services.Abstracts.Products;
+using finalProject.Common.Wrappers.Responses.Abstracts;
+using finalProject.Common.Wrappers.Responses.Concretes.ErrorResponses;
+using finalProject.Common.Wrappers.Responses.Concretes.SuccessResponses;
 using finalProject.DataAccess.Repositories.Abstracts.Products;
 using finalProject.Entities.Concretes.Products;
 using finalProject.Entities.DTOs.Products;
+using MongoDB.Bson;
 
 namespace finalProject.Business.Services.Concretes.Products
 {
@@ -14,7 +18,7 @@ namespace finalProject.Business.Services.Concretes.Products
             _productRepository = productRepository;
         }
 
-        public void Insert(AddProduct_Dto data)
+        public IResponse Insert(AddProduct_Dto data)
         {
             try
             {
@@ -25,20 +29,39 @@ namespace finalProject.Business.Services.Concretes.Products
                     DiscountPercent = data.DiscountPercent,
                     Description = data.Description,
                     ImageUrl = data.ImageUrl,
+                    IsStock = data.IsStock,
+                    FreeDelivery = data.FreeDelivery,
                     SubCategoryId = data.SubCategoryId,
                 });
+                return new SuccessResponse("Məhsul uğurla əlavə edildi!");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                return new ErrorResponse(ex.Message);
             }
         }
-        public IEnumerable<GetProduct_Dto> GetAllProducts()
+        public async Task<IResponse> RemoveAsync(RemoveProduct_Dto data)
+        {
+            try
+            {
+                await _productRepository.UpdateAsync(new Product()
+                {
+                    Id = ObjectId.Parse(data.Id),
+                    IsDeleted = data.IsDeleted
+                });
+                return new SuccessResponse("Məhsul silindi!");
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResponse(ex.Message);
+            }
+        }
+        public IDataResponse<IEnumerable<Product_Dto>> GetAllProducts()
         {
             try
             {
                 IEnumerable<Product> products = _productRepository.GetAll();
-                return products.Select(p => new GetProduct_Dto()
+                return new SuccessDataResponse<IEnumerable<Product_Dto>>(products.Select(p => new Product_Dto()
                 {
                     Id = p.Id.ToString(),
                     ProductName = p.ProductName,
@@ -46,13 +69,39 @@ namespace finalProject.Business.Services.Concretes.Products
                     DiscountPercent = p.DiscountPercent,
                     Description = p.Description,
                     ImageUrl = p.ImageUrl,
+                    IsStock = p.IsStock,
+                    FreeDelivery = p.FreeDelivery,
                     SubCategoryId = p.SubCategoryId,
+                    IsDeleted = p.IsDeleted
+                }).ToList());
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDataResponse<IEnumerable<Product_Dto>>(ex.Message);
+            }
+        }
+        public async Task<IDataResponse<Product_Dto>> GetProductByIdAsync(string id)
+        {
+            try
+            {
+                Product product = await _productRepository.GetByIdAsync(id);
+                return new SuccessDataResponse<Product_Dto>(new Product_Dto()
+                {
+                    Id = product.Id.ToString(),
+                    ProductName = product.ProductName,
+                    Price = product.Price,
+                    DiscountPercent = product.DiscountPercent,
+                    Description = product.Description,
+                    ImageUrl = product.ImageUrl,
+                    IsStock = product.IsStock,
+                    FreeDelivery = product.FreeDelivery,
+                    SubCategoryId = product.SubCategoryId,
+                    IsDeleted = product.IsDeleted
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                return new ErrorDataResponse<Product_Dto>(ex.Message);
             }
         }
     }

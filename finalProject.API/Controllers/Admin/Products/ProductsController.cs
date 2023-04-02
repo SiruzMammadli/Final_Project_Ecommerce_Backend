@@ -1,10 +1,11 @@
 ﻿using finalProject.Business.Services.Abstracts.Products;
+using finalProject.Common.Wrappers.Responses.Abstracts;
 using finalProject.Entities.DTOs.Products;
 using Microsoft.AspNetCore.Mvc;
 
 namespace finalProject.API.Controllers.Admin.Products
 {
-    [Route("api/admin/[controller]")]
+    [Route("api/admin/products")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -29,11 +30,28 @@ namespace finalProject.API.Controllers.Admin.Products
         [HttpGet("get_all")]
         public IActionResult GetAll()
         {
-            IEnumerable<GetProduct_Dto> products = _productService.GetAllProducts();
+            IDataResponse<IEnumerable<Product_Dto>> products = _productService.GetAllProducts();
+            return Ok(products);
+        }
 
-            if(products is not null)
+        [HttpGet("get_by_id/{id}")]
+        public async Task<IActionResult> GetByIdAsync(string id)
+        {
+            if (id is not null)
             {
-                return Ok(products);
+                IDataResponse<Product_Dto> product = await _productService.GetProductByIdAsync(id);
+                return Ok(product);
+            }
+            return BadRequest();
+        }
+
+        [HttpPost("remove")]
+        public async Task<IActionResult> Remove(RemoveProduct_Dto data)
+        {
+            if (data.Id is not null)
+            {
+                await _productService.RemoveAsync(data);
+                return Ok();
             }
             return BadRequest();
         }

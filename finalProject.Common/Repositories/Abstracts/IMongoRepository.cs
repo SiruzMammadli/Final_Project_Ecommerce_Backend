@@ -10,11 +10,13 @@ namespace finalProject.Common.Repositories.Abstracts
         Task InsertAsync(TDocument data);
         void Update(TDocument data);
         Task UpdateAsync(TDocument data);
+        Task RemoveAsync(string id);
         #endregion
 
         #region Reading Methods
         IEnumerable<TDocument> GetAll();
         IEnumerable<TDocument> GetWhere(Expression<Func<TDocument,bool>> filter);
+        Task<TDocument> GetByIdAsync(string id);
         #endregion
     }
 }
